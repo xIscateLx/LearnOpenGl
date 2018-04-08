@@ -23,9 +23,11 @@ set(LIBS glfw3 opengl32)
 
 
 # first create relevant static libraries requried for other projects
-add_library(GLAD "src/glad.c")
+add_library(GLAD "lib/glad.c")
 set(LIBS ${LIBS} GLAD)
 
 include_directories(${CMAKE_SOURCE_DIR}/includes)
 
 add_executable(OpenGLLearning src/main.cpp)
+
+target_link_libraries(OpenGLLearning ${LIBS})
